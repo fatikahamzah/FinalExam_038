@@ -9,6 +9,7 @@ package ws.b.project04;
  *
  * @author asus
  */
+//method untuk exception
 public class ProductNotFoundException extends RuntimeException{
     private static final long serialVersionUID = 1L;
 }

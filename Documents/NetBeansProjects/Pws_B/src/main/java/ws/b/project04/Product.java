@@ -9,19 +9,27 @@ package ws.b.project04;
  *
  * @author asus
  */
-public class Product {
-   private String id;
-   private String name;
 
+//deklarasi kelas
+public class Product {
+    //variabel string id
+   private String id;
+   //variabel string name
+   private String name;
+   
+   //method input id
    public String getId() {
       return id;
    }
+   //method display id
    public void setId(String id) {
       this.id = id;
    }
+   //method input name
    public String getName() {
       return name;
    }
+   //method display name
    public void setName(String name) {
       this.name = name;
    }

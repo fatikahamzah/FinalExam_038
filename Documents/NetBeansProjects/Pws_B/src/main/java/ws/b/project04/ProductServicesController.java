@@ -23,6 +23,7 @@ import ws.b.project04.Product;
  *
  * @author asus
  */
+//method inisiasi controller
  @RestController
 public class ProductServicesController {
    private static Map<String, Product> productRepo = new HashMap<>();
@@ -42,7 +43,7 @@ public class ProductServicesController {
       sugar.setName("Sugar");
       productRepo.put(sugar.getId(), sugar);
    }
-        
+        //Method DELETE
         @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
    public ResponseEntity<Object> delete(@PathVariable("id") String id) { 
        if(!productRepo.containsKey(id)){
@@ -54,6 +55,7 @@ public class ProductServicesController {
        }
    }
    
+   //Method PUT
    @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
    public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) { 
       if(!productRepo.containsKey(id)){
@@ -67,6 +69,7 @@ public class ProductServicesController {
        }
    }
    
+   //Method POST
    @RequestMapping(value = "/products", method = RequestMethod.POST)
    public ResponseEntity<Object> createProduct(@RequestBody @Validated Product product) {
        
@@ -79,6 +82,7 @@ public class ProductServicesController {
        }
    }
    
+   //Method GET
    @RequestMapping(value = "/products")
    public ResponseEntity<Object> getProduct() {
       return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
